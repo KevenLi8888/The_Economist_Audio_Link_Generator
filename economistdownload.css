@@ -1,5 +1,5 @@
 
-@import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
 /* colors */
 /* tab setting */
 /* breakpoints */
@@ -11,8 +11,9 @@ html {
 body {
   background: #efefef;
   color: #333;
-  font-family: "Raleway";
+  font-family: "Open Sans", sans-serif;
   height: 100%;
+  text-align: center;
 }
 body h1 {
   text-align: center;
@@ -22,12 +23,13 @@ body h1 {
   margin: 0;
 }
 img {
-
-  width: 270px;
+  width: 500px;
+  align-content: center;
 }
 
 audio {
-	width: 300px;
+	width: 500px;
+    align-content: center;
 }
 
 #edition_content{
@@ -52,7 +54,7 @@ audio {
 }
 .tabs .content section h2,
 .tabs ul li label {
-  font-family: "Montserrat";
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: #e3120b;

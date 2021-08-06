@@ -1,6 +1,6 @@
 /*
 Created by Jing on Apr 19, 2021
-Last updated on Apr 23, 2021
+Bugs fix by Keven Li
 Retrive the audio file archive from The Economist CDN server.
 */
 
@@ -36,7 +36,7 @@ var imgurlconfig = [
 {
 	date:new Date(2012,8,16),//2012-09-16,//>= 2012-09-22
 	urlconfig:{
-		imgurl: "https://www.economist.com/img/b/400/526/90/sites/default/files/print-covers/{0}_{1}.jpg",
+		imgurl: "https://www.economist.com/img/b/1280/1684/90/sites/default/files/print-covers/{0}_{1}.jpg",
 		file:['cna1280','cuk1280','de_us','de_uk','cna400','cuk400','cna400hires', 'cna1248']
 	}
 }
@@ -58,7 +58,7 @@ let MyEdition = {
 function getEditionByDate(){    
 	var year = document.getElementById("year").value;
 	var month = document.getElementById("month").value;
-	var day = document.getElementById("day").selectedIndex+1;
+	var day = document.getElementById("day").selectedIndex + 2;
 	var d = getEditionDate(year,month,day);
 	if (d != null){
 		this.document.getElementById("edition_content").style.display = 'block';
@@ -78,22 +78,22 @@ function getEditionByDate(){
 }
 
 //input any date, return valid weekly edition date
-function getEditionDate(year,month,day){
-  var d = new Date(year, month, day);
+function getEditionDate(year, month, day) {
+	var d = new Date(year, month, day);
 
-  dayofweek = d.getDay();
-  //console.log(dayofweek);
-  if (dayofweek<6)
-	d = new Date(year, month, day-1-dayofweek);
-  //special case 
-  if (d.getFullYear() ==2011 && d.getMonth() == 11 && d.getDate() >=24)
-    return new Date(2011, 11, 31);
+	dayofweek = d.getDay();
+	//console.log(dayofweek);
+	if (dayofweek <= 6)
+		d = new Date(year, month, day - dayofweek); //fixed the wrong date bug
+	//special case
+	if (d.getFullYear() == 2011 && d.getMonth() == 11 && d.getDate() >= 24)
+		return new Date(2011, 11, 31);
 
-  if (d.getMonth() == 11 && d.getDate() >24 ){
-    return getEditionDate(year, month, day-7);
-   } //Christmas
-else
-  return d;
+	if (d.getMonth() == 11 && d.getDate() > 24) {
+		return getEditionDate(year, month, day - 7);
+	} //Christmas
+	else
+		return d;
 }
 
 //assemble myedition
@@ -114,7 +114,7 @@ function getEdition(d){
  }
 
 function getEditionTitle(d){
-//need to retrive title from official website
+//TODO: need to retrive title from official website
 //use Date as a placeholder for now.
 	return "Weekly Edition "+d.toISOString().slice(0, 10);
 }

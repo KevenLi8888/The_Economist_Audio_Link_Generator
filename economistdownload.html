@@ -3,18 +3,18 @@
 <head><meta charset="utf-8"/>
 <!--
 Created by Jing on Apr 19, 2021
-Last updated on Apr 23, 2021
+Bugs fix by Keven Li
 Retrive the audio file archive from The Economist CDN server.
 -->
 
-<title>The Economist Audio List</title>
+<title>The Economist Audio Link Generator</title>
 
 <link rel="stylesheet" href="economistdownload.css" type="text/css" />
 <script type="text/javascript" src="economistdownload.js?v=1.05"></script>
 </head>
 
 <body>
-<h1>The Economist Audio List</h1>
+<h1>The Economist Audio Link Generator</h1>
 <div class="tabs">
   <input type="radio" id="tab1" name="tab-control" checked>
   <input type="radio" id="tab2" name="tab-control">
@@ -62,8 +62,8 @@ Retrive the audio file archive from The Economist CDN server.
 		<h2>Find Edition</h2>
 	  
 		<label for="fromdate">Select Date:</label>
-		&nbsp;&nbsp;&nbsp; (Valid date range: 2007-05-26 ~ Current)
-		<br />
+		 (Valid date range: 2007-05-26 ~ Current)
+		<br/>
 
 		<select name="" id="year">
 			<option value="2021" selected="selected">2021</option>
@@ -102,7 +102,6 @@ Retrive the audio file archive from The Economist CDN server.
 		&nbsp;&nbsp;&nbsp;  
 			
 		<button onclick="getEditionByDate()">Get</button><br />
-		<br />
 
 		<div id="edition_content">
 			<p id="edition_title"></p>
@@ -148,23 +147,37 @@ Retrive the audio file archive from The Economist CDN server.
              
     </section>
 
-    <section>
-		<h2>Help</h2>
-      
-		<p>The purpose of this website is to help subscribers retrieve audio archives of The Economist Weekly Editions from the CDN server.  </p>
-		<h3>Find Edition</h3>
-		<p>This function takes a selected date as input and returns a weekly edition that covers the selected date. For example, with input as "2021 Jan 1st", the application will return the "Weekly Edition 2020-12-19", which covers the date from 2020-12-19 to 2021-01-01.
+	  <section>
+		  <h2>Help</h2>
 
-		<p>For each weekly edition, the application will try to get cover images (for UK or US version) and the full edition archive audio file download link. 
-		If the returned weekly edition comes with an online media in *.m4a format, the audio player will be automatically loaded. </p>
-			  
-		<h3>Download List</h3>
-		<p>This function takes a select year value as input and generates the whole year's audio archive download list. </p>
-	    
-	    	<br /><br /><br />
-	    	<p><b>Github</b>&nbsp;&nbsp;&nbsp;<a href="https://github.com/jingking/The-Economist-Audio-List">The-Economist-Audio-List</a></p>
+		  <p>The purpose of this website is to help subscribers retrieve audio archives of The Economist Weekly Editions
+			  from the CDN server. </p>
+		  <br/>
 
-    </section>
+		  <h3>Find Edition</h3>
+		  <p>This function takes a selected date as input and returns a weekly edition that covers the selected date.
+			  For example, with input as "2021 Jan 1st", the application will return the "Weekly Edition 2020-12-19",
+			  which covers the date from 2020-12-19 to 2021-01-01.
+
+		  <p>For each weekly edition, the application will try to get cover images (for UK or US version) and the full
+			  edition archive audio file download link.
+			  If the returned weekly edition comes with an online media in *.m4a format, the audio player will be
+			  automatically loaded. </p>
+		  <br/>
+
+		  <h3>Download List</h3>
+		  <p>This function takes a select year value as input and generates the whole year's audio archive download
+			  list. </p>
+		  <br/>
+
+		  <h3>Notice</h3>
+		  <p>For educational purpose only.
+		  <p>The downloaded files are copyright contents of <a href="https://www.economist.com">The Economist Newspaper Limited</a>, and should not be stored or distributed by any means.</p>
+		  <p>Originally developed by <a href="https://github.com/jingking/The-Economist-Audio-List">jingking</a>.
+		  <p>Modified and bugs fixed by <a href="https://github.com/KevenLi8888/The_Economist_Audio_Link_Generator">Keven Li</a>.
+		  </p>
+
+	  </section>
   
   </div>
 
