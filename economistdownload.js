@@ -161,9 +161,12 @@ function getEditionURL(d){
 	if (issuestr== 9136){
 		URLs.audio = urlstr.format(year,datestr,issuestr,extension.online);
 		URLs.download = urlstr_2019.format(year,datestr,issuestr,extension.download); 
-	}else if (issuestr> 8796){
+	}else if (issuestr> 8796 && issuestr<9308){
 		URLs.audio = urlstr.format(year,datestr,issuestr,extension.online);
 		URLs.download = urlstr.format(year,datestr,issuestr,extension.download);
+	}else if (issuestr> 9308){
+		URLs.audio = urlstr.format(year,datestr,(issuestr-1),extension.online);
+		URLs.download = urlstr.format(year,datestr,(issuestr-1),extension.download);
 	}else {
 		URLs.audio = urlstr_2012.format(year,datestr,extension.online);
 		URLs.download = urlstr_2012.format(year,datestr,extension.download);
