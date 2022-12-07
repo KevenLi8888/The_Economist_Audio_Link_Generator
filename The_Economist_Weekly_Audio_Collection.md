@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # The Economist Weekly Audio Collection
 
 
@@ -14,9 +18,9 @@ Check each issue via Saturdays' [counter](https://researchmaniacs.com/Lists/Year
 
 
 
-**Choose the year you desire:**
 
-[TOC]
+
+
 
 
 
